@@ -11,8 +11,13 @@
         <view:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <TextBox Margin="36,30,375,387"
-                 Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
-                 TextWrapping="Wrap"/>
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О приложении"></MenuItem>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

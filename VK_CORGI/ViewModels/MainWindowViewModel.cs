@@ -1,4 +1,7 @@
-﻿using VK_CORGI.ViewModels.Base;
+﻿using System.Windows;
+using System.Windows.Input;
+using VK_CORGI.Infrastructure.Commands;
+using VK_CORGI.ViewModels.Base;
 
 namespace VK_CORGI.ViewModels
 {
@@ -13,6 +16,20 @@ namespace VK_CORGI.ViewModels
         {
             get => _Title;
             set => Set(ref _Title, value);
+        }
+
+        public ICommand CloseApplicationCommand { get; }
+
+
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+        private void OnCloseApplicationCommandExecuted(object p)
+        {
+            Application.Current.Shutdown();
+        }
+
+        public MainWindowViewModel()
+        {
+            CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
         }
     }
 }

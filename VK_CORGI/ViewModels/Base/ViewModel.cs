@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace VK_CORGI.ViewModel.Base
+namespace VK_CORGI.ViewModels.Base
 {
     internal class ViewModel : INotifyPropertyChanged
     {

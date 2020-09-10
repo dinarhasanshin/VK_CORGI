@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\Commands\" />
     <Folder Include="Services\" />
     <Folder Include="Resources\" />
   </ItemGroup>

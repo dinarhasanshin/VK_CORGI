@@ -15,8 +15,18 @@ namespace VK_CORGI.Infrastructure.Commands
             _Execute = Execute ?? throw new ArgumentNullException(nameof(Execute));//Проверка на передачу в Execute данных.
             _CanExecute = CanExecute;
         }
+        /// <summary>
+        /// Проверка, может ли выполниться команда
+        /// </summary>
+        /// <param name="Параметр команды"></param>
+        /// <returns></returns>
         public override bool CanExecute(object parameter) => _CanExecute?.Invoke(parameter) ?? true;
 
+
+        /// <summary>
+        /// Действия выполняемые командой
+        /// </summary>
+        /// <param name="Параметр команды"></param>
         public override void Execute(object parameter) => _Execute(parameter);
     }
 }

@@ -7,29 +7,46 @@ namespace VK_CORGI.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        /// <summary>
-        /// Пример свойства с реализацией INotifyPropertyChanged
-        /// </summary>
-        private string _Title = "VK_CORGI";
 
-        public string Title
+
+        private ViewModel _SelecteViewModel;
+
+        public ViewModel SelectedViewModel
         {
-            get => _Title;
-            set => Set(ref _Title, value);
+            get => _SelecteViewModel;
+            set => Set(ref _SelecteViewModel, value);
         }
 
-        public ICommand CloseApplicationCommand { get; }
 
 
-        private bool CanCloseApplicationCommandExecute(object p) => true;
-        private void OnCloseApplicationCommandExecuted(object p)
+        public ICommand PageSelectedCommand { get; }
+
+
+        private bool CanPageSelectedCommandExecute(object p) => true;
+        private void OnPageSelectedCommandExecuted(object p)
         {
-            Application.Current.Shutdown();
+            if (p.ToString() == "Home")
+            {
+                SelectedViewModel = new HomeViewModel();
+            }
+            else if (p.ToString() == "View")
+            {
+                SelectedViewModel = new ViewViewModel();
+            }
+/*            switch (p.ToString())
+            {
+                case "Home":
+                    SelectedViewModel = new HomeViewModel();
+                    break;
+                case "View":
+                    SelectedViewModel = new ViewViewModel();
+                    break;
+            }*/
         }
 
         public MainWindowViewModel()
         {
-            CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+            PageSelectedCommand = new LambdaCommand(OnPageSelectedCommandExecuted, CanPageSelectedCommandExecute);
         }
     }
 }

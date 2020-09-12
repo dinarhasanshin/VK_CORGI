@@ -20,7 +20,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="15*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0"  Content="|||" Command="{Binding NavigationVisibilityCommand}" FontSize ="20" Padding="0,0,0,5"></Button>
+            <Button Grid.Row="0"  Content="|||" Command="{Binding NavigationVisibilityCommand}" CommandParameter="Hidden" FontSize ="20" Padding="0,0,0,5"></Button>
             <StackPanel Grid.Row="1" Margin="0,3,0,0" Visibility="{Binding NavigationVisibility}">
                 <Button Content="N" Command="{Binding PageSelectedCommand}" CommandParameter="News" Margin="1,1,0,1"></Button>
                 <Button Content="M" Command="{Binding PageSelectedCommand}" CommandParameter="Messages" Margin="1,0,0,1"></Button>

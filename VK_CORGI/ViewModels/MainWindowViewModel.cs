@@ -36,11 +36,11 @@ namespace VK_CORGI.ViewModels
         private bool CanPageSelectedCommandExecute(object p) => true;
         private void OnPageSelectedCommandExecuted(object p)
         {
-            if (p.ToString() == "Home")
+            if (p.ToString() == "News")
             {
                 SelectedViewModel = new NewsViewModel();
             }
-            else if (p.ToString() == "View")
+            else if (p.ToString() == "Messages")
             {
                 SelectedViewModel = new MessagesViewModel();
             }

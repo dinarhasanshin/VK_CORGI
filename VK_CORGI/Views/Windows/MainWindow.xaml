@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:view ="clr-namespace:VK_CORGI.ViewModels"
         xmlns:local="clr-namespace:VK_CORGI"
         Title="Window" 
-        Height="450" Width="800">
+        Height="654" Width="900">
     <Window.DataContext>
         <view:MainWindowViewModel/>
     </Window.DataContext>
@@ -15,17 +16,33 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="17*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid>
+        <Grid Background="Blue">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="15*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0"  Content="|||" Command="{Binding NavigationVisibilityCommand}" CommandParameter="Hidden" FontSize ="20" Padding="0,0,0,5"></Button>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock.InputBindings>
+                    <MouseBinding Command="{Binding NavigationVisibilityCommand}" CommandParameter="Hidden" MouseAction="LeftClick"></MouseBinding>
+                </TextBlock.InputBindings>
+                <fa:ImageAwesome Icon="Solid_Bars" Width="30" Foreground="Orange"/>
+            </TextBlock>
             <StackPanel Grid.Row="1" Margin="0,3,0,0" Visibility="{Binding NavigationVisibility}">
-                <Button Content="N" Command="{Binding PageSelectedCommand}" CommandParameter="News" Margin="1,1,0,1"></Button>
-                <Button Content="M" Command="{Binding PageSelectedCommand}" CommandParameter="Messages" Margin="1,0,0,1"></Button>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding PageSelectedCommand}" CommandParameter="News" MouseAction="LeftClick"></MouseBinding>
+                    </TextBlock.InputBindings>
+                <fa:ImageAwesome Icon="Regular_Newspaper" Width="30" Foreground="Orange"/>
+                </TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding PageSelectedCommand}" CommandParameter="Messages" MouseAction="LeftClick"></MouseBinding>
+                    </TextBlock.InputBindings>
+                <fa:ImageAwesome Icon="Brands_FacebookMessenger" Width="30" Foreground="Orange"/>
+                </TextBlock>
             </StackPanel>
         </Grid>
         <ContentControl Grid.Column="1" Content="{Binding SelectedViewModel}"></ContentControl>
     </Grid>
+
 </Window>

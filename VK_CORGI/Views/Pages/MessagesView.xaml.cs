@@ -18,9 +18,6 @@ namespace VK_CORGI.Views.Pages
     /// </summary>
     public partial class MessagesView : UserControl
     {
-        public MessagesView()
-        {
-            InitializeComponent();
-        }
+        public MessagesView() => InitializeComponent();
     }
 }

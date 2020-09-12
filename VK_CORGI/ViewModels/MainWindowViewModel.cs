@@ -29,6 +29,7 @@ namespace VK_CORGI.ViewModels
 
 
         #region Команды
+
         #region Навигация
 
         public ICommand PageSelectedCommand { get; }

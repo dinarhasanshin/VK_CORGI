@@ -18,9 +18,6 @@ namespace VK_CORGI.Views.Pages
     /// </summary>
     public partial class NewsView : UserControl
     {
-        public NewsView()
-        {
-            InitializeComponent();
-        }
+        public NewsView() => InitializeComponent();
     }
 }

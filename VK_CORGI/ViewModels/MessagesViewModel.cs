@@ -7,5 +7,6 @@ namespace VK_CORGI.ViewModels
 {
     internal class MessagesViewModel : ViewModel
     {
+
     }
 }

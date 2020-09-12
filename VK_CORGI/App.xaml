@@ -4,6 +4,7 @@
              xmlns:views = "clr-namespace:VK_CORGI.Views.Pages"
              xmlns:viewmodels ="clr-namespace:VK_CORGI.ViewModels"
              xmlns:local="clr-namespace:VK_CORGI"
+             xmlns:res ="clr-namespace:VK_CORGI.Resources.Styles"
              StartupUri="Views/Windows/MainWindow.xaml">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewmodels:NewsViewModel}">
@@ -12,5 +13,10 @@
         <DataTemplate DataType="{x:Type viewmodels:MessagesViewModel}">
             <views:MessagesView/>
         </DataTemplate>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/NavigationMenu.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

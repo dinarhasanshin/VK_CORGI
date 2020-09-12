@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:VK_CORGI"
              StartupUri="Views/Windows/MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
-            <views:Home/>
+        <DataTemplate DataType="{x:Type viewmodels:NewsViewModel}">
+            <views:NewsView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:ViewViewModel}">
-            <views:View/>
+        <DataTemplate DataType="{x:Type viewmodels:MessagesViewModel}">
+            <views:MessagesView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

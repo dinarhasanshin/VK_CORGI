@@ -17,36 +17,61 @@ namespace VK_CORGI.ViewModels
             set => Set(ref _SelecteViewModel, value);
         }
 
+        private string _NavigationVisibility;
 
+        public string NavigationVisibility
+        {
+            get => _NavigationVisibility;
+            set => Set(ref _NavigationVisibility, value);
+        }
+
+
+
+
+        #region Команды
+        #region Навигация
 
         public ICommand PageSelectedCommand { get; }
-
 
         private bool CanPageSelectedCommandExecute(object p) => true;
         private void OnPageSelectedCommandExecuted(object p)
         {
             if (p.ToString() == "Home")
             {
-                SelectedViewModel = new HomeViewModel();
+                SelectedViewModel = new NewsViewModel();
             }
             else if (p.ToString() == "View")
             {
-                SelectedViewModel = new ViewViewModel();
+                SelectedViewModel = new MessagesViewModel();
             }
-/*            switch (p.ToString())
-            {
-                case "Home":
-                    SelectedViewModel = new HomeViewModel();
-                    break;
-                case "View":
-                    SelectedViewModel = new ViewViewModel();
-                    break;
-            }*/
         }
+
+        #endregion
+
+        #region Скрытие меню навигации
+
+        public ICommand NavigationVisibilityCommand { get; }
+
+        private bool CanNavigationVisibilityCommandExecute(object p) => true;
+        private void OnNavigationVisibilityCommandExecuted(object p)
+        {
+            if(p.ToString() == "Hidden" && NavigationVisibility != "Hidden")
+            {
+                NavigationVisibility = "Hidden";
+            }
+            else
+            {
+                NavigationVisibility = "Visible";
+            }
+        }
+        #endregion
+
+        #endregion
 
         public MainWindowViewModel()
         {
             PageSelectedCommand = new LambdaCommand(OnPageSelectedCommandExecuted, CanPageSelectedCommandExecute);
+            NavigationVisibilityCommand = new LambdaCommand(OnNavigationVisibilityCommandExecuted, CanNavigationVisibilityCommandExecute);
         }
     }
 }

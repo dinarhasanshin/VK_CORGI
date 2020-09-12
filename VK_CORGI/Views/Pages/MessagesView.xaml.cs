@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace VK_CORGI.Views.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для View.xaml
+    /// Логика взаимодействия для MessagesView.xaml
     /// </summary>
-    public partial class View : UserControl
+    public partial class MessagesView : UserControl
     {
-        public View()
+        public MessagesView()
         {
             InitializeComponent();
         }

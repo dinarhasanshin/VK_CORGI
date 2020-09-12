@@ -5,7 +5,7 @@ using VK_CORGI.ViewModels.Base;
 
 namespace VK_CORGI.ViewModels
 {
-    internal class HomeViewModel : ViewModel
+    internal class MessagesViewModel : ViewModel
     {
     }
 }
